@@ -1,6 +1,6 @@
 # Morpheus
 
-A gem for periodic management of cron activity.
+A gem for periodic management of crons and CLI jobs
 
 ## Related Projects
 
