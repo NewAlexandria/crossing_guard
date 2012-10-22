@@ -1,4 +1,4 @@
-require '../lib/config'
+require 'config'
 Config.using(Config.config[:conf])
 
 module Morpheus

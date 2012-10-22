@@ -2,7 +2,7 @@
 
 require 'yaml'
 
-class Config
+module Config
   # Configuration defaults
   @config = { :dreams    => "/etc/morpheus.dreams",
               :conf      => '/etc/morpheus.yml',
