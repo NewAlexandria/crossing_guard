@@ -1,1 +1,13 @@
-require 'morpheus'
+#!/usr/bin/env ruby
+require '../lib/morpheus'
+
+if ARGV.any? && (ARGV.first == '--help' || ARGV.first == '-h')
+  puts "usage: $0 <one-liner command>"
+elsif ARGV.any? && Morpheus.config[:state] == 'blue-pill'
+  Morpheus.sleep ARGV[0]
+elsif Morpheus.config[:state] == 'red-pill'
+  `#{ARGV[0]}`
+  Morpheus.awaken if File.exists?(Morpheus.config[:dreams])
+else
+  # warn
+end

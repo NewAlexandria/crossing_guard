@@ -1,20 +1,14 @@
-#!/usr/bin/ruby
 # via nicholasbrochu.com
 
 require 'yaml'
 
-module Config
+class Config
   # Configuration defaults
   @config = { :dreams    => "/etc/morpheus.dreams",
-              :min       => 0,
-              :max       => 99 }
+              :conf      => '/etc/morpheus.yml',
+              :state     => 'red-pill' }
 
   @valid_config_keys = @config.keys
-
-  # Configure through hash
-  def self.configure(opts = {})
-    opts.each {|k,v| @config[k.to_sym] = v if @valid_config_keys.include? k.to_sym}
-  end
 
   # Configure through yaml file
   def self.using(path_to_yaml_file)
@@ -34,4 +28,12 @@ module Config
   def self.config
     @config
   end
+
+  private
+
+  # Configure through hash
+  def self.configure(opts = {})
+    opts.each {|k,v| @config[k.to_sym] = v if @valid_config_keys.include? k.to_sym}
+  end
+
 end
