@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'lib/morpheus'
+require 'morpheus'
 
 if ARGV.any? && (ARGV.first == '--help' || ARGV.first == '-h')
   puts "usage: $0 <one-liner command>"
