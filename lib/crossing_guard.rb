@@ -1,19 +1,19 @@
 require 'config'
 Config.using(Config.config[:conf])
 
-module Morpheus
+module CrossingGuard
   def self.config
     @config ||= Config.config
   end
 
   def self.sleep(command)
-    dream_file = File.open(config[:dreams], 'a+') do |f|
+    ops_file = File.open(config[:ops], 'a+') do |f|
       f.write "#{command}\n"
     end
   end
 
   def self.awaken
-    filename = config[:dreams]
+    filename  = config[:ops]
     file_safe = filename+'.op'
 
     File.rename(filename, file_safe)

@@ -1,15 +1,20 @@
-# Morpheus
+# Crossing Guard
 
-> A gem for simple, periodic, management of crons and CLI jobs.
+> A gem for simple, periodic, management of crons and shell calls.
 
-Morpheus is simple way to sleep unix commands (things run via shell), and 
-replay everything when wake-up time arrives. 
+Crossing Guard is simple way to wait unix commands, usually while other resource-heavy 
+processes are running.  Crossing Guard will de-dupe the waiting processes before running the queue.
 
-**Morphus does not daemonize itself**.  If you do not have a regular process 
-that will call Morpheus (e.g. to try new jobs), then you  must run it 'blank' via cron 
+**Crossing Guard does not daemonize itself**.  If you do not have a regular process 
+that will call Crossing Guard (e.g. to try new jobs), then you must run it 'blank' via cron 
 or other daemon(ization).
 
-Examples will come in-time; for now, see the *tiny* source.
+Examples will come in time; for now, see the *tiny* source.
+
+# Roadmap
+
+* clearing of queue(s) after a fixed interval. hour, or date.
+* regex-based wait queues.
 
 ## Related Projects
 

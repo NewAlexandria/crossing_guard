@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    morpheus (0.1.2)
+    crossing_guard (0.2.0)
 
 GEM
   remote: http://rubygems.org/
@@ -11,4 +11,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  morpheus!
+  crossing_guard!

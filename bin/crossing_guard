@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require 'crossing_guard'
+
+if ARGV.any? && (ARGV.first == '--help' || ARGV.first == '-h')
+  puts "usage: $0 <one-liner command>"
+elsif ARGV.any? && CrossingGuard.config[:state] == 'blue-pill'
+  CrossingGuard.sleep ARGV[0]
+elsif CrossingGuard.config[:state] == 'red-pill'
+  `#{ARGV[0]}`
+  CrossingGuard.awaken if File.exists?(CrossingGuard.config[:ops])
+else
+  # warn
+end

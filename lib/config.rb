@@ -4,8 +4,8 @@ require 'yaml'
 
 module Config
   # Configuration defaults
-  @config = { :dreams    => "/etc/morpheus.dreams",
-              :conf      => '/etc/morpheus.yml',
+  @config = { :ops       => "/etc/crossing_guard.ops",
+              :conf      => '/etc/crossing_guard.yml',
               :state     => 'red-pill' }
 
   @valid_config_keys = @config.keys

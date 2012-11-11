@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-     
 $:.push File.expand_path("../lib", __FILE__)
-require "morpheus/version"
+require "crossing_guard/version"
 
 Gem::Specification.new do |s|
-  s.name        = 'morpheus'
-  s.version     = Morpheus::Version.to_s
+  s.name        = 'crossing_guard'
+  s.version     = CrossingGuard::Version.to_s
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Zachary StarkJones']
   s.email       = ['zak@newalexandria.org']  
-  s.homepage    = 'http://github.com/newalexandria/morpheus'
-  s.summary     = 'Sleep and wake managed cron jobs' 
-  s.description = 'Configure sleep times for cron (or any called job) in a central place.'
+  s.homepage    = 'http://github.com/newalexandria/crossing_guard'
+  s.summary     = 'An on/off switch for crons and other shell traffic' 
+  s.description = 'Configure wait times for crons (or any shell calls) in a central place. Currently supports a single wait queue.'
     
   s.files        = `git ls-files`.split("\n")   
   s.test_files   = `git ls-files -- {spec,features}/*`.split("\n")
