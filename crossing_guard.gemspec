@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'crossing_guard'
   s.version     = CrossingGuard::Version.to_s
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Zachary StarkJones']
+  s.authors     = ['New Alexandria']
   s.email       = ['zak@newalexandria.org']  
   s.homepage    = 'http://github.com/newalexandria/crossing_guard'
   s.summary     = 'An on/off switch for crons and other shell traffic' 
