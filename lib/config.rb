@@ -12,16 +12,14 @@ module Config
 
   # Configure through yaml file
   def self.using(path_to_yaml_file)
-    begin
-      config = YAML::load(IO.read(path_to_yaml_file))
-    rescue Errno::ENOENT
-      puts(:warning, "YAML configuration file couldn't be found. Using defaults."); return
-      # log(:warning, "YAML configuration file couldn't be found. Using defaults."); return
-    rescue Psych::SyntaxError
-      puts(:warning, "YAML configuration file contains invalid syntax. Using defaults."); return
-      # log(:warning, "YAML configuration file contains invalid syntax. Using defaults."); return
-    end
-
+    config = YAML::load(IO.read(path_to_yaml_file))
+  rescue Errno::ENOENT
+    puts(:warning, "YAML configuration file couldn't be found. Using defaults."); return
+    # log(:warning, "YAML configuration file couldn't be found. Using defaults."); return
+  rescue Psych::SyntaxError
+    puts(:warning, "YAML configuration file contains invalid syntax. Using defaults."); return
+    # log(:warning, "YAML configuration file contains invalid syntax. Using defaults."); return
+  ensure
     configure(config)
   end
 
